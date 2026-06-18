@@ -1,0 +1,538 @@
+html{
+    scroll-behavior:smooth;
+}
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+}
+
+/* Navbar */
+
+nav{
+    background:black;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+nav a:hover{
+    color:red;
+}
+
+/* Buttons */
+
+button{
+    background:red;
+    color:white;
+
+    border:none;
+    padding:12px 25px;
+
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkred;
+}
+
+/* Hero */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:60px;
+    animation:fadeDown 1s ease-in-out;
+}
+
+.hero-content p{
+    font-size:20px;
+    margin-top:10px;
+    opacity:0.9;
+    animation:fadeUp 1s ease-in-out;
+}
+
+.hero-btn{
+    margin-top:20px;
+    padding:14px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+
+    background:linear-gradient(45deg, red, darkred);
+    color:white;
+
+    box-shadow:0 0 20px red;
+    transition:0.3s;
+}
+
+.hero-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 30px red;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.hero h1{
+    font-size:60px;
+}
+
+/* Plans */
+
+.plans{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.plan-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:250px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    transition:0.3s;
+}
+
+/* About */
+
+.about{
+    padding:80px 20px;
+    text-align:center;
+    background:#f4f4f4;
+}
+
+/* Trainers */
+
+.trainers{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.trainer-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.trainer-card{
+    width:250px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+.trainer-card:hover{
+    transform:translateY(-10px);
+    transition:0.3s;
+}
+
+/* BMI */
+
+.bmi{
+    padding:80px 20px;
+    text-align:center;
+    background:#f4f4f4;
+}
+
+.bmi input{
+    display:block;
+    width:250px;
+    margin:10px auto;
+    padding:12px;
+}
+
+/* Contact */
+
+.contact{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.contact form{
+    max-width:500px;
+    margin:auto;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    box-sizing:border-box;
+}
+
+/* Gallery */
+
+.gallery{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.gallery-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.gallery img{
+    width:300px;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+    transition:0.3s;
+}
+
+/* Footer */
+
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.theme-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* moon */
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    top: 3px;
+    border-radius: 50%;
+    background: white;
+    transition: 0.4s;
+    box-shadow: inset -6px -6px 0 #333;
+}
+
+/* ON */
+#darkToggle:checked + .slider {
+    background: #222;
+}
+
+#darkToggle:checked + .slider::before {
+    transform: translateX(30px);
+    box-shadow: 0 0 15px white;
+}
+
+/* DARK MODE */
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark{
+    background:#0f172a;
+    color:#f8fafc;
+}
+
+body.dark nav{
+    background:#020617;
+}
+
+body.dark footer{
+    background:#020617;
+}
+
+body.dark .about,
+body.dark .bmi,
+body.dark .membership,
+body.dark .attendance,
+body.dark .testimonials{
+    background:#1e293b;
+    color:white;
+}
+
+body.dark .card,
+body.dark .trainer-card,
+body.dark .testimonial-card,
+body.dark .login-box{
+    background:#334155;
+    color:white;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea{
+    background:#475569;
+    color:white;
+    border:1px solid #64748b;
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder{
+    color:#cbd5e1;
+}
+
+body.dark .contact{
+    background:#0f172a;
+    color:white;
+}
+
+body.dark .gallery{
+    background:#0f172a;
+}
+
+body.dark .contact-info h3{
+    color:#f97316;
+}
+
+body.dark button{
+    background:#dc2626;
+}
+
+body.dark button:hover{
+    background:#b91c1c;
+}
+/* Mobile */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    .menu{
+        margin-top:10px;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .plan-container,
+    .trainer-container,
+    .gallery-container{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+
+/* Login Page */
+
+.login{
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background-image:url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48");
+    background-size:cover;
+    background-position:center;
+}
+
+.login-box{
+    background:white;
+    padding:40px;
+    width:300px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    box-sizing:border-box;
+}
+
+.login-box button{
+    width:100%;
+}
+
+.membership{
+    padding:80px 20px;
+    text-align:center;
+    background:#f4f4f4;
+}
+
+.membership h2{
+    font-size:40px;
+}
+
+.membership input,
+.membership select{
+    display:block;
+    width:300px;
+    margin:15px auto;
+    padding:12px;
+}
+
+.attendance{
+    padding:80px 20px;
+    text-align:center;
+    background:#f4f4f4;
+}
+
+.attendance input{
+    display:block;
+    width:300px;
+    margin:15px auto;
+    padding:12px;
+}
+.menu{
+    display:flex;
+    align-items:center;
+    gap:20px;        
+} 
+
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 1s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+#result{
+    margin-top:20px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+.trainer-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.testimonials{
+    padding:80px 20px;
+    text-align:center;
+    background:#f4f4f4;
+}
+
+.testimonial-card{
+    background:white;
+    max-width:500px;
+    margin:20px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-5px);
+    transition:0.3s;
+}
+.card:nth-child(3){
+    border:3px solid gold;
+    transform:scale(1.05);
+    box-shadow:0 0 25px gold;
+    position:relative;
+}
+.badge{
+    position:absolute;
+    top:-12px;
+    right:10px;
+    background:gold;
+    color:black;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+.contact-info{
+    margin-top:30px;
+}
+
+.contact-info h3{
+    color:red;
+}
+
+.contact-info p{
+    font-size:18px;
+    margin:10px 0;
+}
+#joinResult{
+    color:green;
+    font-size:22px;
+    font-weight:bold;
+    margin-top:20px;
+}
